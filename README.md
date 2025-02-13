@@ -60,14 +60,14 @@ The hub for controlling multiple nodes is available at [inkydocker](https://gith
    ```bash
    git clone https://github.com/Andersoersted/rpiinky
 
-	3.	Change to the rpiinky directory:
+3.	Change to the rpiinky directory:
+   	 ```bash
+	cd rpiinky
 
-cd rpiinky
 
-
-	4.	Run the installation script:
-
-sudo bash install.sh
+4.	Run the installation script:
+	 ```bash
+	sudo bash install.sh
 
 This script will:
 	•	Update and upgrade system packages.
@@ -95,44 +95,44 @@ Replace <IP_ADDRESS> with your device’s IP address in the following examples.
 Upload an Image
 
 Upload an image to display on the e-ink screen:
-
-curl -F "file=@/path/to/your/image.jpg" http://<IP_ADDRESS>/send_image
+ 	
+  	curl -F "file=@/path/to/your/image.jpg" http://<IP_ADDRESS>/send_image
 
 Set Display Orientation
 
 Set the display orientation to either “horizontal” or “vertical”:
 
-curl -X POST -d "orientation=vertical" http://<IP_ADDRESS>/set_orientation
+	curl -X POST -d "orientation=vertical" http://<IP_ADDRESS>/set_orientation
 
 Get Display Information
 
 Retrieve display information in JSON format:
 
-curl http://<IP_ADDRESS>/display_info
+	curl http://<IP_ADDRESS>/display_info
 
 Perform System Update
 
 Trigger a system update and upgrade (which will reboot the device):
 
-curl -X POST http://<IP_ADDRESS>/system_update
+	curl -X POST http://<IP_ADDRESS>/system_update
 
 Create Disk Backup
 
 Create a compressed backup of the SD card and download it:
 
-curl -X POST http://<IP_ADDRESS>/backup --output backup.img.gz
+	curl -X POST http://<IP_ADDRESS>/backup --output backup.img.gz
 
 Update Application
 
 Perform a Git pull to update the application and reboot the device:
 
-curl -X POST http://<IP_ADDRESS>/update
+	curl -X POST http://<IP_ADDRESS>/update
 
 Connect to the Metrics Stream (SSE)
 
 Connect to the SSE stream to receive real-time system metrics:
 
-curl http://<IP_ADDRESS>/stream
+	curl http://<IP_ADDRESS>/stream
 
 This documentation provides complete instructions for installation and usage of the rpiinky Display App. For multi-node control, please refer to the inkydocker repository.
 
